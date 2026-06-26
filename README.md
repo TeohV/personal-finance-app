@@ -261,69 +261,6 @@ npm run build
 | Financial Goals | Track savings targets and reserved progress |
 | Admin | Manage users and review user financial summaries |
 
-## Before Pushing to GitHub
-
-Run this checklist before pushing:
-
-1. Make sure `.env` is not committed.
-2. Make sure no secrets, passwords, or real database credentials are in `.env.example`.
-3. Make sure `vendor`, `node_modules`, `.pnpm-store`, and `public/build` are not committed.
-4. Run the test suite:
-
-```bash
-composer test
-```
-
-5. Run the formatter check:
-
-```bash
-composer exec pint -- --test
-```
-
-6. Build frontend assets to confirm Vite works:
-
-```bash
-npm run build
-```
-
-7. Clear local Laravel caches if needed:
-
-```bash
-php artisan optimize:clear
-```
-
-8. Check pending files:
-
-```bash
-git status --short
-```
-
-If Git says `not a git repository`, initialize the project first:
-
-```bash
-git init
-git branch -M main
-git remote add origin <your-github-repository-url>
-```
-
-9. Commit with a clear message:
-
-```bash
-git add .
-git commit -m "Improve finance workflow with accounts and transfers"
-```
-
-10. Push to GitHub:
-
-```bash
-git push origin main
-```
-
-If your branch is named `master`, use:
-
-```bash
-git push origin master
-```
 
 ## Suggested Future Improvements
 
