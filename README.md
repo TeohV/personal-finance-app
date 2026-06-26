@@ -262,17 +262,3 @@ npm run build
 | Admin | Manage users and review user financial summaries |
 
 
-## Suggested Future Improvements
-
-- Add reports by month, category, and account.
-- Add charts for income, expenses, and asset growth.
-- Add recurring income and recurring expenses.
-- Add export to CSV or PDF.
-- Add audit logs for financial record changes.
-- Add GitHub Actions for automated tests.
-- Add a setup page or command for creating the first admin user.
-- Add soft deletes for important financial records.
-
-## License
-
-This project is for academic use. If reused publicly, add the appropriate license for your group or institution.
