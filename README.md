@@ -2,35 +2,6 @@
 
 FinTrack is a Laravel-based personal finance web application for tracking accounts, income, expenses, monthly budgets, savings goals, and basic admin user management.
 
-The project is designed for an academic group assignment, so the workflow is intentionally simple and easy to understand while still using a more realistic accounting model than only "income" and "expense".
-
-## Professional Project Rating
-
-**Rating: 7.5/10 for an academic project**
-
-From a professional perspective, this project is above average for a student assignment because it includes authentication, authorization, CRUD workflows, validation, tests, a consistent frontend design, and a clearer accounting model using accounts and transfers.
-
-Strengths:
-
-- Clear Laravel MVC structure.
-- Good user ownership checks for financial records.
-- Income, expense, account, transfer, budget, and goal workflows are separated logically.
-- Transfers correctly handle cases like withdrawing money from bank to cash.
-- Admin routes are protected.
-- Automated feature tests cover important workflows.
-- UI is simple, consistent, and suitable for an academic system.
-
-Current limitations:
-
-- Not yet production-grade accounting because it does not use a full double-entry ledger.
-- No audit log for financial changes.
-- No recurring income or recurring expense support.
-- No charts, exports, or advanced reports.
-- No CI workflow configured for GitHub Actions yet.
-- No role management screen for creating the first admin automatically.
-
-For a real commercial finance product, the rating would be closer to **6/10**, mainly because production systems need stronger auditability, reporting, backups, and accounting controls.
-
 ## Main Features
 
 - User registration, login, logout, and profile management.
@@ -42,7 +13,6 @@ For a real commercial finance product, the rating would be closer to **6/10**, m
 - Financial goals with reserved progress tracking.
 - Admin user overview, role update, ban or unban, and financial review.
 - Security middleware for banned users and admin-only routes.
-- Consistent Blade-based frontend design.
 
 ## Accounting Logic
 
@@ -54,16 +24,6 @@ The app uses a simple accounting workflow:
 | Add expense | Decreases the selected account balance |
 | Transfer money | Moves money from one account to another |
 | Withdraw from bank | Recorded as a transfer from Bank to Cash |
-
-Example:
-
-If a user withdraws RM 200 from a bank account:
-
-- It is **not income** because the user did not earn new money.
-- It is **not an expense** because the user did not spend money.
-- It is a **transfer** from `Bank` to `Cash`.
-
-This keeps income reports, expense reports, and monthly budgets accurate.
 
 ## Tech Stack
 
@@ -199,53 +159,6 @@ Open the app:
 
 ```text
 http://127.0.0.1:8000
-```
-
-## Demo User
-
-If you run the seeder, it creates:
-
-```text
-Email: test@example.com
-Password: password
-```
-
-To make a user an admin for local testing, run:
-
-```bash
-php artisan tinker
-```
-
-Then:
-
-```php
-\App\Models\User::where('email', 'test@example.com')->update(['role' => 'admin']);
-```
-
-## Testing
-
-Run all tests:
-
-```bash
-composer test
-```
-
-Run code style check:
-
-```bash
-composer exec pint -- --test
-```
-
-Automatically fix formatting:
-
-```bash
-composer exec pint
-```
-
-Build frontend assets:
-
-```bash
-npm run build
 ```
 
 ## Important Pages
